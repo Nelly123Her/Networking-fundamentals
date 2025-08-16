@@ -90,19 +90,83 @@ function initScrollAnimations() {
                 if (entry.target.classList.contains('stat-item')) {
                     animateCounter(entry.target);
                 }
+                
+                // Special handling for stat cards with staggered animation
+                if (entry.target.classList.contains('stat-card')) {
+                    const statCards = document.querySelectorAll('.stat-card');
+                    statCards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('animate');
+                        }, index * 200);
+                    });
+                }
+                
+                // Special handling for timeline items with staggered animation
+                if (entry.target.classList.contains('timeline-item')) {
+                    const timelineItems = document.querySelectorAll('.timeline-item');
+                    timelineItems.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.add('animate');
+                        }, index * 300);
+                    });
+                }
             }
         });
     }, observerOptions);
 
     // Observe elements for animation
     const animatedElements = document.querySelectorAll(
-        '.skill-category, .project-card, .timeline-item, .stat-item, .contact-info, .contact-form, .blog-card'
+        '.skill-category, .project-card, .timeline-item, .stat-item, .contact-info, .contact-form, .blog-card, .stat-card'
     );
     
     animatedElements.forEach(el => {
         el.classList.add('loading');
         observer.observe(el);
     });
+    
+    // Counter animation for statistics
+    function animateStatCounter(element, target, duration = 2000) {
+        let start = 0;
+        const increment = target / (duration / 16);
+        const timer = setInterval(() => {
+            start += increment;
+            if (start >= target) {
+                element.textContent = target + (target === 70 ? '%' : target === 99.9 ? '%' : '+');
+                clearInterval(timer);
+            } else {
+                if (target === 99.9) {
+                    element.textContent = start.toFixed(1) + '%';
+                } else if (target === 70) {
+                    element.textContent = Math.floor(start) + '%';
+                } else {
+                    element.textContent = Math.floor(start) + '+';
+                }
+            }
+        }, 16);
+    }
+    
+    // Trigger counter animations when stats section is visible
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumbers = entry.target.querySelectorAll('.stat-info h3');
+                const targets = [50, 70, 99.9, 25];
+                
+                statNumbers.forEach((stat, index) => {
+                    setTimeout(() => {
+                        animateStatCounter(stat, targets[index], 2000);
+                    }, index * 200);
+                });
+                
+                statsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    const experienceStats = document.querySelector('.experience-stats');
+    if (experienceStats) {
+        statsObserver.observe(experienceStats);
+    }
 }
 
 // Animate skill tags

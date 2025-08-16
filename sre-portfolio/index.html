@@ -428,48 +428,134 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="section-subtitle">Ready to discuss your next DevOps project or infrastructure challenge? I'm here to help!</p>
+            
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Let's Connect</h3>
-                    <p>I'm always interested in discussing new opportunities, challenging projects, or just talking about technology.</p>
-                    <div class="contact-items">
+                    <div class="contact-header">
+                        <h3>Get In Touch</h3>
+                        <p>Available for freelance projects, consulting, and full-time opportunities</p>
+                    </div>
+                    
+                    <div class="contact-methods">
                         <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>neherprec@proton.me</span>
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <a href="mailto:neherprec@proton.me">neherprec@proton.me</a>
+                                <span class="response-time">Response within 24 hours</span>
+                            </div>
                         </div>
+                        
                         <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+52 225 118 2220</span>
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Phone</h4>
+                                <a href="tel:+522251182220">+52 225 118 2220</a>
+                                <span class="response-time">Available Mon-Fri, 9AM-6PM CST</span>
+                            </div>
                         </div>
+                        
                         <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Mérida, Yucatán, MX</span>
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Location</h4>
+                                <span>Mérida, Yucatán, MX</span>
+                                <span class="response-time">Available for remote roles</span>
+                            </div>
                         </div>
+                        
                         <div class="contact-item">
-                            <i class="fas fa-globe"></i>
-                            <span>Available for remote roles</span>
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>LinkedIn</h4>
+                                <a href="https://linkedin.com/in/nelly-hernandez-devops" target="_blank">Connect with me</a>
+                                <span class="response-time">Professional networking</span>
+                            </div>
                         </div>
                     </div>
+                    
+                    <div class="availability-status">
+                        <div class="status-indicator available"></div>
+                        <span>Currently available for new projects</span>
+                    </div>
                 </div>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <h3>Send a Message</h3>
+                        <p>Have a specific project in mind? Let's discuss how I can help you achieve your infrastructure goals.</p>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" placeholder="john@company.com" required>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company">Company</label>
+                                <input type="text" id="company" name="company" placeholder="Your Company">
+                            </div>
+                            <div class="form-group">
+                                <label for="project-type">Project Type</label>
+                                <select id="project-type" name="project-type">
+                                    <option value="">Select project type</option>
+                                    <option value="cloud-migration">Cloud Migration</option>
+                                    <option value="devops-consulting">DevOps Consulting</option>
+                                    <option value="infrastructure-setup">Infrastructure Setup</option>
+                                    <option value="ci-cd-pipeline">CI/CD Pipeline</option>
+                                    <option value="monitoring-setup">Monitoring & Observability</option>
+                                    <option value="security-audit">Security Audit</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
                         </div>
+                        
                         <div class="form-group">
-                            <input type="text" placeholder="Subject" required>
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" placeholder="Project Discussion - [Brief Description]" required>
                         </div>
+                        
                         <div class="form-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" placeholder="Tell me about your project requirements, timeline, and any specific challenges you're facing..." rows="6" required></textarea>
+                            <div class="char-counter">
+                                <span id="charCount">0</span>/1000 characters
+                            </div>
                         </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span class="checkmark"></span>
+                                I'd like to receive occasional updates about DevOps best practices and industry insights
+                            </label>
+                        </div>
+                        
                         <button type="submit" class="btn btn-primary">
                             <i class="fas fa-paper-plane"></i>
                             Send Message
                         </button>
+                        
+                        <div class="form-note">
+                            <i class="fas fa-shield-alt"></i>
+                            Your information is secure and will never be shared with third parties.
+                        </div>
                     </form>
                 </div>
             </div>

@@ -201,45 +201,233 @@ function initTypingAnimation() {
 
 // Contact form functionality
 function initContactForm() {
-    const form = document.querySelector('.contact-form form');
+    const contactForm = document.getElementById('contactForm');
+    const messageTextarea = document.getElementById('message');
+    const charCount = document.getElementById('charCount');
     
-    if (form) {
-        form.addEventListener('submit', function(e) {
+    // Character counter for message textarea
+    if (messageTextarea && charCount) {
+        messageTextarea.addEventListener('input', function() {
+            const currentLength = this.value.length;
+            const maxLength = 1000;
+            charCount.textContent = currentLength;
+            
+            if (currentLength > maxLength) {
+                charCount.style.color = '#ff6b6b';
+                this.style.borderColor = '#ff6b6b';
+            } else if (currentLength > maxLength * 0.8) {
+                charCount.style.color = '#ffd93d';
+                this.style.borderColor = '#ffd93d';
+            } else {
+                charCount.style.color = 'inherit';
+                this.style.borderColor = '';
+            }
+        });
+    }
+    
+    // Enhanced form validation and submission
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
             // Get form data
-            const formData = new FormData(form);
-            const name = form.querySelector('input[type="text"]').value;
-            const email = form.querySelector('input[type="email"]').value;
-            const subject = form.querySelector('input[type="text"]:nth-of-type(2)').value;
-            const message = form.querySelector('textarea').value;
+            const formData = new FormData(this);
+            const name = formData.get('name')?.trim();
+            const email = formData.get('email')?.trim();
+            const subject = formData.get('subject')?.trim();
+            const message = formData.get('message')?.trim();
+            const company = formData.get('company')?.trim();
+            const projectType = formData.get('project-type');
             
-            // Basic validation
-            if (!name || !email || !subject || !message) {
-                showNotification('Please fill in all fields', 'error');
+            // Clear previous error states
+            this.querySelectorAll('.form-group').forEach(group => {
+                group.classList.remove('error');
+            });
+            
+            let hasErrors = false;
+            
+            // Validation
+            if (!name || name.length < 2) {
+                showFieldError('name', 'Please enter a valid name (at least 2 characters)');
+                hasErrors = true;
+            }
+            
+            if (!email) {
+                showFieldError('email', 'Email is required');
+                hasErrors = true;
+            } else {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    showFieldError('email', 'Please enter a valid email address');
+                    hasErrors = true;
+                }
+            }
+            
+            if (!subject || subject.length < 5) {
+                showFieldError('subject', 'Please enter a subject (at least 5 characters)');
+                hasErrors = true;
+            }
+            
+            if (!message || message.length < 20) {
+                showFieldError('message', 'Please enter a detailed message (at least 20 characters)');
+                hasErrors = true;
+            }
+            
+            if (message && message.length > 1000) {
+                showFieldError('message', 'Message is too long (maximum 1000 characters)');
+                hasErrors = true;
+            }
+            
+            if (hasErrors) {
                 return;
             }
             
-            if (!isValidEmail(email)) {
-                showNotification('Please enter a valid email address', 'error');
-                return;
-            }
-            
-            // Simulate form submission
-            const submitBtn = form.querySelector('.btn-primary');
+            // Simulate form submission with enhanced feedback
+            const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
-            
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending Message...';
             submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.7';
             
+            // Create success message
             setTimeout(() => {
-                showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
-                form.reset();
+                // Show success message
+                showSuccessMessage(name);
+                
+                // Reset form
+                this.reset();
+                if (charCount) charCount.textContent = '0';
+                
+                // Reset button
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
+                submitBtn.style.opacity = '1';
             }, 2000);
         });
     }
+    
+    // Helper function to show field errors
+    function showFieldError(fieldName, message) {
+        const field = document.getElementById(fieldName);
+        if (field) {
+            const formGroup = field.closest('.form-group');
+            formGroup.classList.add('error');
+            
+            // Remove existing error message
+            const existingError = formGroup.querySelector('.error-message');
+            if (existingError) {
+                existingError.remove();
+            }
+            
+            // Add new error message
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent = message;
+            errorDiv.style.color = '#ff6b6b';
+            errorDiv.style.fontSize = '0.85rem';
+            errorDiv.style.marginTop = '5px';
+            formGroup.appendChild(errorDiv);
+            
+            // Focus on the field
+            field.focus();
+        }
+    }
+    
+    // Helper function to show success message
+    function showSuccessMessage(name) {
+        // Create success notification
+        const successDiv = document.createElement('div');
+        successDiv.className = 'success-notification';
+        successDiv.innerHTML = `
+            <div class="success-content">
+                <i class="fas fa-check-circle"></i>
+                <h4>Message Sent Successfully!</h4>
+                <p>Thank you, ${name}! I've received your message and will get back to you within 24 hours.</p>
+            </div>
+        `;
+        
+        // Style the notification
+        successDiv.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #4caf50, #45a049);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+            max-width: 400px;
+            animation: slideInRight 0.5s ease;
+        `;
+        
+        const successContent = successDiv.querySelector('.success-content');
+        successContent.style.cssText = `
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+        `;
+        
+        const icon = successDiv.querySelector('i');
+        icon.style.fontSize = '2rem';
+        
+        const heading = successDiv.querySelector('h4');
+        heading.style.margin = '0';
+        heading.style.fontSize = '1.2rem';
+        
+        const paragraph = successDiv.querySelector('p');
+        paragraph.style.margin = '0';
+        paragraph.style.fontSize = '0.95rem';
+        paragraph.style.opacity = '0.9';
+        
+        document.body.appendChild(successDiv);
+        
+        // Remove notification after 5 seconds
+        setTimeout(() => {
+            successDiv.style.animation = 'slideOutRight 0.5s ease';
+            setTimeout(() => {
+                if (successDiv.parentNode) {
+                    successDiv.parentNode.removeChild(successDiv);
+                }
+            }, 500);
+        }, 5000);
+    }
+    
+    // Add CSS animations for notifications
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideOutRight {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+        
+        .form-group.error input,
+        .form-group.error textarea,
+        .form-group.error select {
+            border: 2px solid #ff6b6b !important;
+            background: rgba(255, 107, 107, 0.1) !important;
+        }
+    `;
+    document.head.appendChild(style);
 }
 
 // Email validation

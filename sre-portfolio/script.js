@@ -96,7 +96,7 @@ function initScrollAnimations() {
 
     // Observe elements for animation
     const animatedElements = document.querySelectorAll(
-        '.skill-category, .project-card, .timeline-item, .stat-item, .contact-info, .contact-form'
+        '.skill-category, .project-card, .timeline-item, .stat-item, .contact-info, .contact-form, .blog-card'
     );
     
     animatedElements.forEach(el => {
@@ -340,6 +340,14 @@ function initSmoothScrolling() {
                     top: offsetTop,
                     behavior: 'smooth'
                 });
+                
+                // Close mobile menu if open
+                const mobileMenu = document.querySelector('.nav-menu');
+                const hamburger = document.querySelector('.hamburger');
+                if (mobileMenu && mobileMenu.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
             }
         });
     });

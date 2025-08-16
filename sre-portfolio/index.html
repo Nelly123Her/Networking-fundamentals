@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SRE/DevOps Portfolio - Your Name</title>
+    <title>SRE/DevOps Portfolio - Nelly B. Hernández</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
         <div class="nav-container">
             <div class="nav-logo">
                 <i class="fas fa-server"></i>
-                <span>SRE Portfolio</span>
+                <span>Nelly B. Hernández</span>
             </div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
@@ -22,6 +22,7 @@
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -37,12 +38,11 @@
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    <span class="gradient-text">Site Reliability Engineer</span>
-                    <br>& DevOps Specialist
+                    <span class="gradient-text">Nelly B. Hernández</span>
+                    <br>DevOps / Site Reliability Engineer
                 </h1>
                 <p class="hero-subtitle">
-                    Building scalable, reliable systems and automating infrastructure 
-                    to ensure 99.9% uptime and seamless deployments.
+                    Certified DevSecOps & Cloud Engineer focused on automation, reliability, and secure cloud adoption. 6+ years building software and 4+ years in DevOps across Azure & AWS with Terraform, Ansible, Vault, Kubernetes, and CI/CD.
                 </p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">
@@ -88,14 +88,10 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        I'm a passionate Site Reliability Engineer with 5+ years of experience 
-                        in building and maintaining large-scale distributed systems. I specialize 
-                        in cloud infrastructure, automation, and ensuring high availability.
+                        DevOps Engineer and Web Developer with a track record of automating infrastructure, hardening security, and improving deployment reliability. Experienced with Infrastructure as Code (Terraform), configuration management (Ansible), secrets management (Vault), and container orchestration (Kubernetes).
                     </p>
                     <p>
-                        My expertise spans across multiple cloud platforms, container orchestration, 
-                        CI/CD pipelines, and monitoring solutions. I believe in the power of 
-                        automation and infrastructure as code to create resilient systems.
+                        I design scalable systems with zero-trust principles, embed observability (Dynatrace, Datadog, Azure Monitor), and build CI/CD with Jenkins and Azure Pipelines. I collaborate closely with developers to streamline delivery through Git-based workflows and automated testing.
                     </p>
                     <div class="stats">
                         <div class="stat-item">
@@ -129,10 +125,10 @@
                 <div class="skill-category">
                     <h3><i class="fas fa-cloud"></i> Cloud Platforms</h3>
                     <div class="skill-items">
-                        <span class="skill-tag">AWS</span>
-                        <span class="skill-tag">Google Cloud</span>
                         <span class="skill-tag">Azure</span>
-                        <span class="skill-tag">DigitalOcean</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Azure Arc</span>
+                        <span class="skill-tag">Azure Site Recovery</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -141,14 +137,14 @@
                         <span class="skill-tag">Docker</span>
                         <span class="skill-tag">Kubernetes</span>
                         <span class="skill-tag">Helm</span>
-                        <span class="skill-tag">OpenShift</span>
+                        <span class="skill-tag">F5</span>
                     </div>
                 </div>
                 <div class="skill-category">
                     <h3><i class="fas fa-code-branch"></i> CI/CD & Automation</h3>
                     <div class="skill-items">
                         <span class="skill-tag">Jenkins</span>
-                        <span class="skill-tag">GitLab CI</span>
+                        <span class="skill-tag">Azure DevOps</span>
                         <span class="skill-tag">GitHub Actions</span>
                         <span class="skill-tag">ArgoCD</span>
                     </div>
@@ -158,25 +154,25 @@
                     <div class="skill-items">
                         <span class="skill-tag">Terraform</span>
                         <span class="skill-tag">Ansible</span>
-                        <span class="skill-tag">CloudFormation</span>
-                        <span class="skill-tag">Pulumi</span>
+                        <span class="skill-tag">Packer</span>
+                        <span class="skill-tag">Sentinel</span>
                     </div>
                 </div>
                 <div class="skill-category">
                     <h3><i class="fas fa-chart-line"></i> Monitoring & Observability</h3>
                     <div class="skill-items">
-                        <span class="skill-tag">Prometheus</span>
-                        <span class="skill-tag">Grafana</span>
-                        <span class="skill-tag">ELK Stack</span>
+                        <span class="skill-tag">Dynatrace</span>
                         <span class="skill-tag">Datadog</span>
+                        <span class="skill-tag">Prometheus</span>
+                        <span class="skill-tag">Azure Monitor</span>
                     </div>
                 </div>
                 <div class="skill-category">
                     <h3><i class="fas fa-terminal"></i> Programming & Scripting</h3>
                     <div class="skill-items">
                         <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Go</span>
                         <span class="skill-tag">Bash</span>
+                        <span class="skill-tag">PowerShell</span>
                         <span class="skill-tag">JavaScript</span>
                     </div>
                 </div>
@@ -191,53 +187,41 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-header">
-                        <i class="fas fa-cloud-upload-alt"></i>
-                        <h3>Multi-Cloud Infrastructure</h3>
+                        <i class="fas fa-diagram-project"></i>
+                        <h3>Rhythmyx → Microservices Migration</h3>
                     </div>
-                    <p>Designed and implemented a multi-cloud infrastructure using Terraform, spanning AWS, GCP, and Azure with automated failover capabilities.</p>
+                    <p>Automated migration from Rhythmyx CMS to microservices using Jenkins pipelines and AWX-backed Ansible, improving deployment consistency and release velocity.</p>
                     <div class="project-tech">
-                        <span>Terraform</span>
-                        <span>AWS</span>
-                        <span>GCP</span>
-                        <span>Azure</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-header">
-                        <i class="fas fa-robot"></i>
-                        <h3>CI/CD Pipeline Automation</h3>
-                    </div>
-                    <p>Built a comprehensive CI/CD pipeline using GitLab CI and ArgoCD, reducing deployment time by 80% and achieving zero-downtime deployments.</p>
-                    <div class="project-tech">
-                        <span>GitLab CI</span>
-                        <span>ArgoCD</span>
-                        <span>Kubernetes</span>
+                        <span>Jenkins</span>
+                        <span>Ansible/AWX</span>
                         <span>Docker</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        <span>Kubernetes</span>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-header">
-                        <i class="fas fa-chart-area"></i>
-                        <h3>Monitoring & Alerting System</h3>
+                        <i class="fas fa-building"></i>
+                        <h3>Terraform OSS → Terraform Enterprise</h3>
                     </div>
-                    <p>Implemented a comprehensive monitoring solution using Prometheus, Grafana, and custom alerting rules, improving incident response time by 60%.</p>
+                    <p>Migrated IaC to TFE with reusable modules and Sentinel policy checks; implemented GitOps with ArgoCD to manage AKS/EKS clusters and app lifecycles.</p>
                     <div class="project-tech">
-                        <span>Prometheus</span>
-                        <span>Grafana</span>
-                        <span>AlertManager</span>
-                        <span>Python</span>
+                        <span>Terraform Enterprise</span>
+                        <span>Sentinel</span>
+                        <span>ArgoCD</span>
+                        <span>AKS/EKS</span>
                     </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-key"></i>
+                        <h3>Vault HA & Dynamic Secrets</h3>
+                    </div>
+                    <p>Deployed HA Vault (Raft) with auto-unseal, integrated AWS/Azure auth and Vault Agent injectors; delivered dynamic DB creds and PKI for secure workloads.</p>
+                    <div class="project-tech">
+                        <span>Vault</span>
+                        <span>HSM</span>
+                        <span>Kubernetes</span>
+                        <span>PKI</span>
                     </div>
                 </div>
             </div>
@@ -252,13 +236,15 @@
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
-                        <h3>Senior Site Reliability Engineer</h3>
-                        <h4>Tech Company Inc.</h4>
-                        <span class="timeline-date">2022 - Present</span>
+                        <h3>Site Reliability Engineer</h3>
+                        <h4>24 Hour Fitness</h4>
+                        <span class="timeline-date">1 year 5 months — Present</span>
                         <ul>
-                            <li>Led infrastructure automation initiatives, reducing manual deployment time by 90%</li>
-                            <li>Designed and implemented disaster recovery procedures, achieving RTO of 15 minutes</li>
-                            <li>Managed Kubernetes clusters serving 10M+ daily active users</li>
+                            <li>Automated Rhythmyx→microservices migration with Jenkins; improved deployment reliability.</li>
+                            <li>Automated Dynatrace dashboards and alerting for better observability.</li>
+                            <li>Migrated from Chef to Ansible and deployed AWX for standardized operations.</li>
+                            <li>Built CI/CD pipelines in Jenkins; created Bash tooling for provisioning and monitoring.</li>
+                            <li>Configured F5 load balancers and managed Kubernetes clusters.</li>
                         </ul>
                     </div>
                 </div>
@@ -266,28 +252,175 @@
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <h3>DevOps Engineer</h3>
-                        <h4>Startup Solutions</h4>
-                        <span class="timeline-date">2020 - 2022</span>
+                        <h4>OneAmerica (via TechMahindra)</h4>
+                        <span class="timeline-date">24 months</span>
                         <ul>
-                            <li>Built CI/CD pipelines from scratch, enabling daily deployments</li>
-                            <li>Implemented infrastructure as code using Terraform and Ansible</li>
-                            <li>Reduced infrastructure costs by 40% through optimization and automation</li>
+                            <li>Designed & managed Terraform-based infrastructure with compliance and scalability.</li>
+                            <li>Built single‑click automation; integrated Azure DevOps service connections.</li>
+                            <li>Automated ops with Azure CLI/PowerShell; configured Azure Monitor DCRs.</li>
+                            <li>Secured secrets with Azure Key Vault; stored TF state with remote locking in Blob.</li>
+                            <li>Partnered with developers on Git workflows, reviews, and automated testing.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
-                        <h3>Systems Administrator</h3>
-                        <h4>Enterprise Corp</h4>
-                        <span class="timeline-date">2019 - 2020</span>
+                        <h3>Vault Intensive (Bootcamp)</h3>
+                        <h4>TechMahindra</h4>
+                        <span class="timeline-date">4 months</span>
                         <ul>
-                            <li>Maintained Linux servers and network infrastructure</li>
-                            <li>Implemented monitoring solutions and automated backup procedures</li>
-                            <li>Provided 24/7 on-call support for critical systems</li>
+                            <li>Deployed HA Vault clusters (Raft), dynamic DB creds, ACL/Sentinel policies, and PKI.</li>
+                            <li>Integrated Vault Agent with Kubernetes using sink and secret injectors.</li>
                         </ul>
                     </div>
                 </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Software Engineer</h3>
+                        <h4>Hiumanlab Software Factory — Mérida, Yucatán</h4>
+                        <span class="timeline-date">Nov 2021 – Feb 2023</span>
+                        <ul>
+                            <li>Analyzed requirements, optimized HTML/JS, and documented bugs end‑to‑end.</li>
+                            <li>Improved stability and customer experience; promoted to work closely with devs.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>IT Support / Help Desk</h3>
+                        <h4>Gasomarshal Technologies Inc. — Mérida, Yucatán</h4>
+                        <span class="timeline-date">Jan 2020 – Aug 2021</span>
+                        <ul>
+                            <li>Hardware repair and Windows Server installation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section">
+        <div class="container">
+            <h2 class="section-title">Technical Blog</h2>
+            <p class="section-subtitle">Sharing insights on DevOps, SRE, and cloud infrastructure</p>
+            
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-header">
+                        <div class="blog-category">DevOps</div>
+                        <div class="blog-date">December 2024</div>
+                    </div>
+                    <h3 class="blog-title">Implementing Zero-Trust Architecture in Multi-Cloud Environments</h3>
+                    <p class="blog-excerpt">
+                        Exploring best practices for implementing zero-trust security principles across AWS and Azure infrastructures, 
+                        including identity management, network segmentation, and continuous monitoring strategies.
+                    </p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Security</span>
+                        <span class="blog-tag">Multi-Cloud</span>
+                        <span class="blog-tag">Zero-Trust</span>
+                    </div>
+                    <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-header">
+                        <div class="blog-category">Infrastructure</div>
+                        <div class="blog-date">November 2024</div>
+                    </div>
+                    <h3 class="blog-title">Scaling Kubernetes for 24/7 Fitness Platform Operations</h3>
+                    <p class="blog-excerpt">
+                        Deep dive into designing and implementing auto-scaling Kubernetes clusters for high-availability fitness platforms, 
+                        covering resource optimization, monitoring, and disaster recovery strategies.
+                    </p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Kubernetes</span>
+                        <span class="blog-tag">Scaling</span>
+                        <span class="blog-tag">High Availability</span>
+                    </div>
+                    <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-header">
+                        <div class="blog-category">CI/CD</div>
+                        <div class="blog-date">October 2024</div>
+                    </div>
+                    <h3 class="blog-title">Advanced CI/CD Pipeline Security with SAST and DAST Integration</h3>
+                    <p class="blog-excerpt">
+                        Comprehensive guide to integrating security scanning tools like SonarQube, Snyk, and OWASP ZAP into CI/CD pipelines 
+                        for automated vulnerability detection and compliance enforcement.
+                    </p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">CI/CD</span>
+                        <span class="blog-tag">Security</span>
+                        <span class="blog-tag">SAST/DAST</span>
+                    </div>
+                    <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-header">
+                        <div class="blog-category">Automation</div>
+                        <div class="blog-date">September 2024</div>
+                    </div>
+                    <h3 class="blog-title">Infrastructure as Code: Terraform vs ARM Templates in Practice</h3>
+                    <p class="blog-excerpt">
+                        Practical comparison of Terraform and Azure ARM templates for infrastructure automation, 
+                        including real-world use cases, performance considerations, and migration strategies.
+                    </p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">IaC</span>
+                        <span class="blog-tag">Terraform</span>
+                        <span class="blog-tag">Azure</span>
+                    </div>
+                    <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-header">
+                        <div class="blog-category">Monitoring</div>
+                        <div class="blog-date">August 2024</div>
+                    </div>
+                    <h3 class="blog-title">Building Observability into E-commerce Platforms</h3>
+                    <p class="blog-excerpt">
+                        Implementing comprehensive monitoring and observability solutions for e-commerce platforms using 
+                        Prometheus, Grafana, and ELK Stack for real-time insights and proactive issue resolution.
+                    </p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Monitoring</span>
+                        <span class="blog-tag">Observability</span>
+                        <span class="blog-tag">E-commerce</span>
+                    </div>
+                    <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-header">
+                        <div class="blog-category">Best Practices</div>
+                        <div class="blog-date">July 2024</div>
+                    </div>
+                    <h3 class="blog-title">DevOps Culture: Bridging Development and Operations Teams</h3>
+                    <p class="blog-excerpt">
+                        Insights on fostering effective DevOps culture, improving collaboration between development and operations teams, 
+                        and implementing practices that enhance productivity and system reliability.
+                    </p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Culture</span>
+                        <span class="blog-tag">Team Collaboration</span>
+                        <span class="blog-tag">Best Practices</span>
+                    </div>
+                    <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                </article>
+            </div>
+            
+            <div class="blog-cta">
+                <p>Want to read more technical insights?</p>
+                <a href="#" class="cta-button">View All Posts</a>
             </div>
         </div>
     </section>
@@ -303,19 +436,19 @@
                     <div class="contact-items">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <span>your.email@example.com</span>
+                            <span>neherprec@proton.me</span>
                         </div>
                         <div class="contact-item">
-                            <i class="fab fa-linkedin"></i>
-                            <span>linkedin.com/in/yourprofile</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-github"></i>
-                            <span>github.com/yourusername</span>
+                            <i class="fas fa-phone"></i>
+                            <span>+52 225 118 2220</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Your City, Country</span>
+                            <span>Mérida, Yucatán, MX</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <span>Available for remote roles</span>
                         </div>
                     </div>
                 </div>
@@ -350,9 +483,9 @@
                 <div class="footer-left">
                     <div class="footer-logo">
                         <i class="fas fa-server"></i>
-                        <span>SRE Portfolio</span>
+                        <span>Nelly B. Hernández</span>
                     </div>
-                    <p>Building reliable systems, one deployment at a time.</p>
+                    <p>Automation • Reliability • Cloud Security</p>
                 </div>
                 <div class="footer-right">
                     <div class="social-links">
@@ -364,7 +497,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 SRE Portfolio. All rights reserved.</p>
+                <p>&copy; 2025 Nelly B. Hernández. All rights reserved.</p>
             </div>
         </div>
     </footer>
